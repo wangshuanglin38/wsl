@@ -1,0 +1,11 @@
+# 使用官方的Nginx基础镜像
+FROM nginx:latest
+ 
+# 将当前目录下的内容复制到容器的/usr/share/nginx/html目录下
+COPY . /usr/share/nginx/html
+ 
+# 暴露容器的80端口到宿主机
+EXPOSE 80
+ 
+# 当容器启动时，自动启动Nginx服务
+CMD ["nginx", "-g", "daemon off;"]
